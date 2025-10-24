@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube subtitle keyword replacer",
+  "version": "1.0",
+  "description": "Если в субтитрах встречается слово 'ключ' — заменяет видеоряд на локальный видеофайл расширения.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["replacement.mp4"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
