@@ -1,11 +1,11 @@
 // content.js — усиленная защита от повторных триггеров
 (() => {
   const KEYWORD = 'ключ';
-  const VIDEO_RESOURCE = chrome.runtime.getURL('replacement.mp4');
+  const VIDEO_RESOURCE = chrome.runtime.getURL('replacement.webm');
 
   const OBSERVE_INTERVAL_MS = 250;
-  const TRIGGER_COOLDOWN_MS = 5000; // общий таймаут после триггера (ms)
-  const VIDEO_TIME_COOLDOWN_S = 5;    // если триггер уже был в этой же временной окрестности (секунды) — игнорируем
+  const TRIGGER_COOLDOWN_MS = 2000; // общий таймаут после триггера (ms)
+  const VIDEO_TIME_COOLDOWN_S = 3;    // если триггер уже был в этой же временной окрестности (секунды) — игнорируем
 
   let lastCheck = 0;
   let replacing = false;
@@ -57,6 +57,7 @@
     v.style.background = 'black';
     v.style.objectFit = 'cover';
     v.style.pointerEvents = 'none';
+    v.style.background = 'transparent';
     return v;
   }
 

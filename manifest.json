@@ -23,8 +23,9 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["replacement.mp4"],
-      "matches": ["https://www.youtube.com/*"]
+      "resources": ["replacement.webm"],
+      "matches": ["https://www.youtube.com/*"],
+      "mime_type": "video/quicktime"
     }
   ]
 }
