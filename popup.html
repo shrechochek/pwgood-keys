@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Replacement settings</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <h3>Replacement — настройки</h3>
+
+    <label class="row">
+      <span>Включено</span>
+      <input id="enabled" type="checkbox" />
+    </label>
+
+    <label class="row">
+      <span>Общий таймаут (мс)</span>
+      <input id="triggerCooldownMs" type="number" min="0" step="100" />
+    </label>
+
+    <label class="row">
+      <span>Cooldown по позиции видео (с)</span>
+      <input id="videoTimeCooldownS" type="number" min="0" step="1" />
+    </label>
+
+    <div class="buttons">
+      <button id="save">Сохранить</button>
+      <button id="reset">Сбросить по умолчанию</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

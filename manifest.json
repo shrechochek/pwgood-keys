@@ -14,18 +14,30 @@
   "host_permissions": [
     "https://www.youtube.com/*"
   ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Replacement settings"
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/watch*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://www.youtube.com/watch*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["replacement.webm"],
-      "matches": ["https://www.youtube.com/*"],
-      "mime_type": "video/quicktime"
+      "resources": [
+        "replacement.webm"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "mime_type": "video/webm"
     }
   ]
 }
